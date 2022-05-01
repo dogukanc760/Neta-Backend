@@ -61,7 +61,8 @@ app.get("/", (req, res) => {
   try {
     res.status(200).json({
       message: "Api is working! Say hello",
-      data: { some: "Some body", elses: "Elses", lover: "lover" },
+      status:200,
+      data: { badverbs:'some data in there bitch' },
     });
   } catch (error) {
     res.status(500).json({ message: error });
