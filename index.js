@@ -77,5 +77,5 @@ app.get("/", (req, res) => {
 // start listener
 app.listen(process.env.PORT || 3000, () => {
   console.log(publicPath);
-  console.log("server drunning at " + process.env.PORT);
+  console.log("ssserver drunning at " + process.env.PORT);
 });
