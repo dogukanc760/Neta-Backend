@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const cors = require("cors");
 const path = require("path");
+const publicPath = path.join(__dirname,  "build");
 
 //Add Routes
 const brandRoute = require("./routes/brand.routes");
@@ -22,6 +23,9 @@ dotenv.config();
 app.use(cors());
 app.use(express.json());
 app.options("*", cors());
+
+//web site rendering
+app.use(express.static(publicPath));
 
 //logger middleware
 const myLogger = function (req, res, next) {
@@ -59,11 +63,12 @@ mongoose
 //default endpoint
 app.get("/", (req, res) => {
   try {
-    res.status(200).json({
-      message: "Api is working! Say hello",
-      status:200,
-      data: { badverbs:'some data in there bitch' },
-    });
+    res.sendFile(path.join(publicPath, "index.html"));
+    // res.status(200).json({
+    //   message: "Api is working! Say hello",
+    //   status: 200,
+    //   data: { badverbs: "some data in there bitch" },
+    // });
   } catch (error) {
     res.status(500).json({ message: error });
   }
@@ -71,5 +76,6 @@ app.get("/", (req, res) => {
 
 // start listener
 app.listen(process.env.PORT || 3000, () => {
+  console.log(publicPath);
   console.log("server running at " + process.env.PORT);
 });
