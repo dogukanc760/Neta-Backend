@@ -6,10 +6,11 @@ exports.getCategory = async (req, res, next) => {
   try {
     const category = await CategoryService.get({});
     if (category) {
-      res.status(200).json({ data: category, status: 200, message: "Success" });
+     return res.status(200).json({ data: category, status: 200, message: "Success" });
     }
     return res.status(404).json({ status: 404, message: "Not Found" });
   } catch (error) {
+    console.log(error);
     return res.status(500).json({ message: error, status: 500 });
   }
 };
@@ -30,6 +31,7 @@ exports.getCategoryById = async (req, res, next) => {
 
 exports.addCategory = async (req, res, next) => {
   try {
+    console.log(req.body + "body");
     const category = await CategoryService.add(req.body);
     if (category) {
       return res

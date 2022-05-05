@@ -31,12 +31,12 @@ app.use(express.static(publicPath));
 const myLogger = function (req, res, next) {
   console.log("A request has come request is:");
   console.log(req.body);
-  if (req.body) {
-    loggerService.add(req.body);
-  }
-  if (req.params) {
-    loggerService.add(req.params);
-  }
+  // if (req.body) {
+  //   loggerService.add(req.body);
+  // }
+  // if (req.params) {
+  //   loggerService.add(req.params);
+  // }
   next();
 };
 

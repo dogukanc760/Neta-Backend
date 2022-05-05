@@ -22,15 +22,19 @@ exports.getById = async (query) => {
 
 exports.add = async (query) => {
   try {
+    console.log(query+"query");
     const newCategory = new Category({
       categoryTitle: query.categoryTitle,
       categoryDescription: query.categoryDescription,
       categoryName: query.categoryName,
       categoryImage: query.categoryImage,
     });
-    const saved = await Category.save(newCategory);
+    const saved = await newCategory.save();
+    console.log(saved+"asd");
+    console.log("first")
     return saved;
   } catch (error) {
+    console.log(error);
     return error;
   }
 };
