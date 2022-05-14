@@ -95,7 +95,8 @@ exports.addSubCategory = async (query, categoryId) => {
             subCategoryName: query.subCategoryName,
             subCategoryTitle: query.subCategoryTitle,
             subCategoryDescription: query.subCategoryDescription,
-
+            showHome: query.showHome,
+            isActive: query.isActive
         });
         const savedSubCategory = await newSubCategory.save();
         return savedSubCategory;
