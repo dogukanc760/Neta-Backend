@@ -18,7 +18,7 @@ router.put('/:id', CategoryController.updateCategory);
 
 
 //http delete 
-router.put('/:id', CategoryController.deleteCategory);
+router.delete('/:id', CategoryController.deleteCategory);
 
 
 
