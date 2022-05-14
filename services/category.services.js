@@ -28,6 +28,8 @@ exports.add = async (query) => {
       categoryDescription: query.categoryDescription,
       categoryName: query.categoryName,
       categoryImage: query.categoryImage,
+      isActive: query.isActive,
+      showHome: query.showHome
     });
     const saved = await newCategory.save();
     console.log(saved+"asd");
