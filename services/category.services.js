@@ -69,9 +69,10 @@ exports.delete = async (query) => {
 
 exports.getAllSubCategory = async (query) => {
     try {
-        const subCategories = await SubCategory.find(query);
+        const subCategories = await SubCategory.find();
         return subCategories;
     } catch (error) {
+      console.log(error);
         return error;
     }
 }
@@ -96,9 +97,10 @@ exports.addSubCategory = async (query, categoryId) => {
             subCategoryDescription: query.subCategoryDescription,
 
         });
-        const savedSubCategory = await SubCategory.save(newSubCategory);
+        const savedSubCategory = await newSubCategory.save();
         return savedSubCategory;
     } catch (error) {
+      console.log(error);
         return error;
     }
 }

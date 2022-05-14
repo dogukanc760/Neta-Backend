@@ -26,17 +26,17 @@ router.delete('/:id', CategoryController.deleteCategory);
 //------------ Category Sub ------------
 
 //http get
-router.get('/get-sub-all', CategoryController.getSubCategory);
-router.get('/get-by-main/:id', CategoryController.getSubsByMain);
+router.get('/sub/get-sub-all', CategoryController.getSubCategory);
+router.get('/sub/get-by-main/:id', CategoryController.getSubsByMain);
 
 //http post
-router.post('/add-sub/:id', CategoryController.addSub);
+router.post('/sub/add-sub/:id', CategoryController.addSub);
 
 //http delete
-router.delete('/delete-sub/:id', CategoryController.deleteSub);
+router.delete('/sub/delete-sub/:id', CategoryController.deleteSub);
 
 //http put
-router.put('/update-sub/:id', CategoryController.updateSub);
+router.put('/sub/update-sub/:id', CategoryController.updateSub);
 
 
 module.exports = router;

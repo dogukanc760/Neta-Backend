@@ -76,7 +76,7 @@ exports.deleteCategory = async (req, res, next) => {
 
 exports.getSubCategory = async (req, res, next) => {
   try {
-    const subCategory = await CategoryService.getAllSubCategory({});
+    const subCategory = await CategoryService.getAllSubCategory();
     if (subCategory) {
       return res
         .status(200)
