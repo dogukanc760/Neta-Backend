@@ -5,8 +5,10 @@ const SubCategory = require("../models/subCategory.model");
 exports.get = async (query) => {
   try {
     const category = await Category.find(query);
+    
     return category;
   } catch (error) {
+    console.log(error)
     return error;
   }
 };

@@ -1,7 +1,18 @@
 const Product = require('../models/product.model');
+const Category = require('../models/category.model');
+const SubCategory = require('../models/subCategory.model');
 
 
 exports.get = async (query) => {
+    try {
+        const product = await Product.find(query);
+        return product;
+    } catch (error) {
+        return error;
+    }
+}
+
+exports.getByCategory = async (query) => {
     try {
         const product = await Product.find(query);
         return product;
